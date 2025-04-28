@@ -113,7 +113,9 @@ The TCP/IP model simplifies the OSI model by combining similar functions into fe
 ### TCP 3-Way Handshake:
 
 ```plaintext
-Client (PC1)        Server (Serv1)
+
+
+Client (PC1)                            Server (Serv1)
     SYN  ---------------->
-                  SYN+ACK  ---------------->
+                  SYN+ACK  <----------------
     ACK  ---------------->
