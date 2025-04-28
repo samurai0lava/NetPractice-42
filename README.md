@@ -49,8 +49,11 @@ created by USA defense (DARPA).
 
 *DORA*
 ->DHCP **D**iscover (is there any DHCP server in this NETWORK i need a an IP address). request type : BROADCAST.
+
 ->DHCP **O**ffer (hmmm what about this IP add u can use it).request type : BROADCAST or UNICAST.
+
 ->DHCP **R**equest (i thick im using this ip address u did gave me). request type : BROADCAST.
+
 ->DHCP **A**ck (okay u can use it, and thank u for letting me know :p). request type : BROADCAST or UNICAST.
 
 ## DNS
