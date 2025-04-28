@@ -40,7 +40,7 @@ Created by **ISO** (International Organization for Standardization).
    - Identifies and secures communication.
 
 
-[PPU'S](images/diagram.png)
+![PPU'S](images/diagram.png)
 ---
 
 ## TCP/IP Model
