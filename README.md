@@ -28,9 +28,13 @@ created by USA defense (DARPA).
 **4 layers :**
 
 *the 4th layer :* Application (7th , 6th , 5th layer of OSI model)
+
 *the 3th layer :* Transport (4th layer of OSI model)
+
 *the 2nd layer :* Internet (3th layer of OSI model)
+
 *the 1st layer :* Link (2nd , 1st layer of OSI model)
+
 
 
 ## DHCP (Dynamic Host Configuration Protocol)
