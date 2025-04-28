@@ -39,6 +39,8 @@ Created by **ISO** (International Organization for Standardization).
    - Example protocols: **HTTP**, **HTTPS**.  
    - Identifies and secures communication.
 
+
+[PPU'S](diagram.png)
 ---
 
 ## TCP/IP Model
