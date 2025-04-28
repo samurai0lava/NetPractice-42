@@ -1,103 +1,119 @@
-# NetPractice-42
-The basics of networking
+# NetPractice - 42  
+*The Basics of Networking*
 
-## OSI Model (Open Systems interconnection) created by the ISO.
+---
 
-**7 layers :**
+## OSI Model (Open Systems Interconnection)
 
+Created by **ISO** (International Organization for Standardization).
 
+**7 Layers:**
 
-*the 7th layer :*Application layer* 
-                ->the closet to the end USER, intercat with the web dev.
-                ->http and https are layer 7.
-                ->identify and secure the connection.
+1. **Physical Layer (Layer 1)**  
+   - Converts bits into electrical signals, radio waves (for wireless), or light pulses (for fiber optics).  
+   - Deals with the physical transmission of data.
 
-*the 6th layer :*
-*the 5th layer :*
-*the 4th layer :*
-*the 3th layer :*
-*the 2th layer :*
-*the 1st layer :*
+2. **Data Link Layer (Layer 2)**  
+   - Ensures reliable transmission between two devices on the same network (e.g., PC to Switch, Router to Router).  
+   - Detects and corrects physical transmission errors.  
+   - Devices: **Switches**.
 
-## TCP/IP Suite 
-created by USA defense (DARPA).
+3. **Network Layer (Layer 3)**  
+   - Provides logical addressing (IP addresses).  
+   - Handles packet forwarding, including routing through routers.  
+   - Devices: **Routers**.
 
-->Conceptual Model used in the internet and other Network
-->like OSI model but with fewer layers
+4. **Transport Layer (Layer 4)**  
+   - Segments and reassembles data for communication (host-to-host communication).  
+   - Ensures complete data transfer.
 
-**4 layers :**
+5. **Session Layer (Layer 5)**  
+   - Manages sessions (dialogues) between applications.
 
-*the 4th layer :* Application (7th , 6th , 5th layer of OSI model)
+6. **Presentation Layer (Layer 6)**  
+   - Translates data (e.g., encryption, decryption, compression).  
+   - Ensures that the data is in a usable format.
 
-*the 3th layer :* Transport (4th layer of OSI model)
+7. **Application Layer (Layer 7)**  
+   - Closest to the end-user, interacts directly with software applications.  
+   - Example protocols: **HTTP**, **HTTPS**.  
+   - Identifies and secures communication.
 
-*the 2nd layer :* Internet (3th layer of OSI model)
+---
 
-*the 1st layer :* Link (2nd , 1st layer of OSI model)
+## TCP/IP Model
 
+Created by **DARPA** (U.S. Department of Defense).
 
+**4 Layers:**
+
+1. **Link Layer**  
+   (Corresponds to OSI Layers 1 & 2)
+
+2. **Internet Layer**  
+   (Corresponds to OSI Layer 3)
+
+3. **Transport Layer**  
+   (Corresponds to OSI Layer 4)
+
+4. **Application Layer**  
+   (Corresponds to OSI Layers 5, 6, 7)
+
+The TCP/IP model simplifies the OSI model by combining similar functions into fewer layers.
+
+---
 
 ## DHCP (Dynamic Host Configuration Protocol)
 
-->DHCP allows hosts to automatically learn various aspects of their network config. IP address , Subnet Mask, default gateway, DNS Server
-->Routers and Servers... are manually configured because they need a fixed IP
-->Small Networks router act like as the DHCP server for host in the LAN
-->Large Network a DHCP server is Linux Server
-->*Lease time* determinated by DHCP sever , the client must give the address of the en of the lease/
+- Automatically assigns **IP addresses**, **subnet masks**, **default gateways**, and **DNS servers** to devices.
+- Devices like routers and servers usually have **static IP addresses**.
+- **Small Networks:** Router often acts as the DHCP server.
+- **Large Networks:** A dedicated DHCP server (often Linux-based) is used.
+- **Lease Time:** IP addresses are leased for a period determined by the DHCP server.
 
-**DHCP requests:**
+### DHCP Process (DORA):
 
-*DORA*
-->DHCP **D**iscover (is there any DHCP server in this NETWORK i need a an IP address). request type : BROADCAST.
+- **D**iscover: Client broadcasts a request for an IP address.  
+- **O**ffer: DHCP server offers an available IP address (Broadcast or Unicast).  
+- **R**equest: Client requests to use the offered IP address (Broadcast).  
+- **A**ck: DHCP server acknowledges the lease (Broadcast or Unicast).
 
-->DHCP **O**ffer (hmmm what about this IP add u can use it).request type : BROADCAST or UNICAST.
+---
 
-->DHCP **R**equest (i thick im using this ip address u did gave me). request type : BROADCAST.
+## DNS (Domain Name System)
 
-->DHCP **A**ck (okay u can use it, and thank u for letting me know :p). request type : BROADCAST or UNICAST.
+- **Purpose:** Translates domain names (like `youtube.com`) into IP addresses (like `142.250.190.78`).
+- **DNS Cache:** Stores previous DNS lookups to reduce network traffic and speed up access.
 
-## DNS
-**The purpose of DNS** 
+---
 
-is used to convert names (www.smtg.com) to a ip adresses, youtube.com ->> #.#.#.# 
-DNS CACHE : device will save the DNS dervers responds to save on network traffic.
+## Routing
 
-## ROUTING 
+- **Routing** is the process routers use to determine the path packets take across networks.
 
-A process that router use to determine the path that ip packet take over a network to rach their destination 
-**Dynamic Routing :** Share each other automatically ...
-**Static Routing :** manually configures 
+### Types of Routing:
+- **Static Routing:** Manually configured routes.
+- **Dynamic Routing:** Routers share routing information automatically.
 
-**Route :** tell the router to send a packet to **destination X**, should send to the packet to **next-hop Y** "next router"
+### Key Concepts:
+- **Route:** Tells the router to forward packets destined for "X" to the next-hop "Y" (next router).
+- **Default Gateway:** A device (usually a router) where a host sends traffic that is destined for outside its local network.
 
-**WAN**: Wide Area Network.
-**LAN**: Local Area Network.
+---
 
-**Default Gateway** : send all "non-local" traffic to.
+## TCP & UDP (Transport Layer Protocols)
 
-## TC & UDP (protocols from the 4th Layer) :
+### TCP (Transmission Control Protocol)
 
-**TCP** is connection-oriented.
-**TCP** provides reliable communication.
-        |-> the destination host must acknowledge that.
-**TCP** provides squencing.
-**TCP** flow control.
+- **Connection-oriented:** Establishes a connection before data is transferred.
+- **Reliable communication:** Ensures that data arrives intact and in order.
+- **Sequencing:** Maintains the correct order of packets.
+- **Flow control:** Manages the rate of data transmission between sender and receiver.
 
+### TCP 3-Way Handshake:
 
-
-**TCP three way handshake**
- ________
-|        |      SYN FLAG
-|________|---------->
-  *PC1*
-
- ________
-|        |      SYN FLAG, ACK FLAG.
-|________|---------->
-  *serv1*
-
- ________
-|        |     ACK FLAG
-|________|---------->
-  *PC1*
-
+```plaintext
+Client (PC1)        Server (Serv1)
+    SYN  ---------------->
+                  SYN+ACK  ---------------->
+    ACK  ---------------->
